@@ -1,0 +1,16 @@
+package prova;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Raio: ");
+		double raio = sc.nextDouble();
+		double areaCirculo = 3.14 * Math.pow(raio, 2.0);
+		System.out.println("Area = " + areaCirculo);
+		sc.close();
+	}
+}
