@@ -1,0 +1,48 @@
+package application;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner entrada = new Scanner(System.in);
+		List<Integer> lista = new ArrayList<>();
+
+		System.out.println("Digite um número: ");
+		Integer numero = entrada.nextInt();
+		if (numero < 0) {
+			while (numero < 0) {
+				System.out.println("digite um numero positivo:");
+				numero = entrada.nextInt();
+			}
+		}
+		int cont = 0;
+		while (numero >= 0) {
+			cont++;
+			lista.add(numero);
+			System.out.println("Digite outro número: ");
+			numero = entrada.nextInt();
+		}
+
+		Integer numeroMaior = lista.get(0);
+		for (int i = 0; i < cont; i++) {
+			if (numeroMaior < lista.get(i)) {
+				numeroMaior = lista.get(i);
+			}
+		}
+
+		Integer numeroMenor = lista.get(0);
+		for (int i = 0; i < cont; i++) {
+			if (numeroMenor > lista.get(i)) {
+				numeroMenor = lista.get(i);
+			}
+		}
+
+		System.out.println("Número maior: " + numeroMaior);
+		System.out.println("Número menor: " + numeroMenor);
+		entrada.close();
+	}
+
+}
